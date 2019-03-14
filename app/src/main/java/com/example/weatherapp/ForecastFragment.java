@@ -1,6 +1,7 @@
 package com.example.weatherapp;
 
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,6 +36,7 @@ public class ForecastFragment extends Fragment {
     IOpenWeatherMap mService;
     TextView txt_city_name,txt_geo_coord;
     RecyclerView recycler_forecast;
+    ProgressDialog progressDialog;
 
     static ForecastFragment instance;
 
@@ -58,9 +60,15 @@ public class ForecastFragment extends Fragment {
         View itemview = inflater.inflate(R.layout.fragment_forecast, container, false);
         txt_city_name = itemview.findViewById(R.id.txt_city_namef);
         txt_geo_coord = itemview.findViewById(R.id.txt_geo_coordf);
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.create();
+        progressDialog.setCanceledOnTouchOutside(false);
+        progressDialog.setTitle("Weather Information");
+        progressDialog.setMessage("Loading data please wait...!!!");
+        progressDialog.show();
         recycler_forecast = itemview.findViewById(R.id.recycler_forcast_id);
         recycler_forecast.setHasFixedSize(true);
-        recycler_forecast.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        recycler_forecast.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
         getWeatherForecastInformation();
         return itemview;
     }
@@ -84,6 +92,7 @@ public class ForecastFragment extends Fragment {
                     @Override
                     public void accept(WeatherForecastResult weatherForecastResult) throws Exception {
                         displayForecastWeather(weatherForecastResult);
+                        progressDialog.dismiss();
 
                     }
                 }, new Consumer<Throwable>() {

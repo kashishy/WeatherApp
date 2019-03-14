@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.v4.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:background="@color/backgroundcolor"
     tools:context=".ForecastFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
     <LinearLayout
         android:id="@+id/main_info"
@@ -19,36 +24,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textcolorPrimary"
             android:textStyle="bold"
-            android:text="5 Days Weather Forecast"/>
+            android:text="Weather Forecast of"/>
 
         <TextView
             android:id="@+id/txt_city_namef"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:text="Weather in Sultanpur"/>
+            android:textColor="@color/textcolorPrimary"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txt_geo_coordf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="italic"
-            android:text="[35.35"/>
+            android:textColor="@color/textcolorPrimary"
+            android:textStyle="italic" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:layout_below="@+id/main_info"
         android:layout_marginTop="20sp"
+        android:orientation="vertical"
         android:id="@+id/recycler_forcast_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </android.support.v7.widget.RecyclerView>
+    </RelativeLayout>
 
-</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

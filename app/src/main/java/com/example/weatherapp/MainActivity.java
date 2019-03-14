@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.widget.RelativeLayout;
 
 import com.example.weatherapp.Adapter.ViewpagerAdapter;
 import com.example.weatherapp.Adapter.WeatherForecastAdapter;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private CoordinatorLayout coordinatorLayout;
+    private RelativeLayout coordinatorLayout;
 
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationCallback locationCallback;
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         Initialiser();
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Dexter.withActivity(this)
                 .withPermissions(Manifest.permission.ACCESS_COARSE_LOCATION,
@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
     private void buildLocationRequest() {
         locationRequest = new LocationRequest();
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        locationRequest.setInterval(5000);
-        locationRequest.setFastestInterval(3000);
+        locationRequest.setInterval(50000);
+        locationRequest.setFastestInterval(50000);
         locationRequest.setSmallestDisplacement(10.0f);
     }
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         ViewpagerAdapter adapter = new ViewpagerAdapter(getSupportFragmentManager());
         adapter.addFragment(TodayWeatherFragment.getInstance(),"Today");
-        adapter.addFragment(ForecastFragment.getInstance(),"5 DAYS");
+        adapter.addFragment(ForecastFragment.getInstance(),"Forecast");
         viewPager.setAdapter(adapter);
     }
 

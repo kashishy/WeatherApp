@@ -2,56 +2,56 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardUseCompatPadding="true"
     app:cardElevation="8dp"
+    android:background="@drawable/background_item"
     app:cardCornerRadius="8dp">
     
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp"
         android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@drawable/background_2"
         android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textcolorPrimary"
             android:textStyle="bold"
             android:id="@+id/txt_datef"
-            android:textSize="20sp"
-            android:text="Wednesday"/>
+            android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_2"
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:id="@+id/img_weatherf"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txt_temperaturef"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textcolorPrimary"
             android:layout_marginLeft="8dp"
-            android:textSize="50sp"
-            android:text="14 C"
+            android:textSize="35sp"
             android:textStyle="bold"/>
     </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/textcolorPrimary"
             android:id="@+id/txt_discriptionf"
-            android:textSize="18sp"
-            android:text="Wednesday"/>
+            android:textAllCaps="true"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

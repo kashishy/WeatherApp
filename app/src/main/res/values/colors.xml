@@ -3,7 +3,8 @@
     <color name="colorPrimary">#125688</color>
     <color name="colorPrimaryDark">#125688</color>
     <color name="colorAccent">#c8e8ff</color>
-    <color name="textcolorPrimary">#ffffff</color>
+    <color name="textcolorPrimary">#C5C3C3</color>
     <color name="windowBackgroundcolor">#ffffff</color>
     <color name="navigationBarcolor">#000000</color>
+    <color name="backgroundcolor">#293251</color>
 </resources>
