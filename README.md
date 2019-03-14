@@ -16,8 +16,8 @@ To use this app you first need to download the APK of the app(Link is given belo
   <li>Location Access : Yes</li>
 </ul>
 
-<h4>Working</h4>
-Working app UI.<br><br>
+<h3>Working</h3>
+Working app UI.<br>
 ![Working APP GIF](https://user-images.githubusercontent.com/38467102/54380571-cc2a7100-46b1-11e9-8e21-7cbf7973d87a.gif)<br><br><br><br>
 Download APK of this app from this Google Drive link<br>
 https://drive.google.com/drive/folders/1Pm51kA7nh7pj4uhMKPnJlTJRJM3rOFqr?usp=sharing
